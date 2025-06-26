@@ -17,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 背景の動く図形 */
+/* 背景の動く図形 (任意で設定) */
 .background-shapes {
     position: fixed;
     top: 0;
@@ -83,7 +83,10 @@ h2 {
 }
 
 /* ヒーローセクション */
-.hero { text-align: center; }
+.hero {
+    text-align: center;
+    padding-bottom: 60px; /* カウントダウンセクションとの間に余白を確保 */
+}
 .team-choice {
     display: flex;
     justify-content: center;
@@ -108,7 +111,7 @@ h2 {
 .team-card.red { background: var(--red-team-color); }
 .team-card.white { background: var(--white-team-color); }
 .event-period {
-    margin-top: 30px;
+    margin-top: 40px;
     background-color: #e9ecef;
     padding: 10px 20px;
     border-radius: 8px;
@@ -119,7 +122,6 @@ h2 {
 #countdown-section {
     background-color: var(--card-bg);
     padding: 40px 20px;
-    margin-top: -30px;
     text-align: center;
 }
 .countdown {
@@ -132,6 +134,9 @@ h2 {
 }
 .countdown h3 { margin: 0 0 15px; font-weight: 400; font-size: 1.2em; }
 #timer { font-size: 2.5em; font-weight: 700; }
+#timer span { margin-right: 4px; }
+#timer .seconds { margin-right: 0; }
+
 
 /* ポイントカードセクション */
 .point-cards {
