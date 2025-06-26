@@ -1,0 +1,232 @@
+/* 基本スタイル */
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fdfaf6;
+    margin: 0;
+}
+
+.container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 800;
+    margin-top: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #e4717a, #f8b195);
+    border-radius: 2px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* ヘッダー */
+header {
+    background: linear-gradient(135deg, #e4717a, #f8b195);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* ヒーローセクション */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+.hero-text h2 {
+    font-size: 1.8em;
+    color: #e4717a;
+}
+.hero-text h2::after {
+    display: none;
+}
+.event-period {
+    background-color: #fff8e1;
+    border-left: 5px solid #f8b195;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.countdown {
+    margin-top: 40px;
+    background-color: #4a4a4a;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.countdown h3 {
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+#timer {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+#timer span {
+    padding: 0 5px;
+}
+
+/* ルールセクション */
+.rule-container {
+    background-color: #fff;
+}
+.rule-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 280px;
+}
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.red-team { border-top: 5px solid #e4717a; }
+.white-team { border-top: 5px solid #a3bded; }
+
+/* ボーナスポイントセクション */
+.section-lead { text-align: center; }
+.bonus-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.bonus-card {
+    border-left: 5px solid #ffd700;
+}
+.bonus-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+/* 隠し玉ポイントセクション */
+#secret {
+    background-color: #f3f8ff;
+    text-align: center;
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 40px;
+}
+
+/* 参加の流れセクション */
+.flow-steps {
+    list-style-type: none;
+    padding-left: 0;
+    counter-reset: step-counter;
+}
+.flow-steps li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+.flow-steps li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #e4717a;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.code-block {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* CTAセクション */
+.cta-section {
+    background-color: #e4717a;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+.cta-section h2 {
+    color: white;
+}
+.cta-section h2::after {
+    background: white;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #e4717a;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    .hero-text h2 { font-size: 1.5em; }
+    #timer { font-size: 1.8em; }
+    h2 { font-size: 1.8em; }
+    .rule-cards { flex-direction: column; }
+}
