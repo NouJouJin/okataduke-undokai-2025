@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>がんばるママの お片付け運動会 2025</title>
+    <title>お片付け運動会 2025</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>がんばるママの<br>お片付け運動会 2025✨</h1>
+    <div class="background-shapes"></div>
+
+    <header class="fade-in">
+        <h1>お片付け運動会 2025</h1>
+        <p class="subtitle">めざせ、スッキリ空間！チームで挑む、最高の夏。</p>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h2>今年の夏は、みんなで楽しくおうちをスッキリ！</h2>
-                <p>チームで励まし合いながら、おうちも心もパワースポットに変えよう！</p>
-                <div class="event-period">
-                    <p><strong>開催期間: 2025年7月1日(火) 〜 7月30日(水)</strong></p>
-                </div>
+        <section class="hero fade-in">
+            <h2>今年の夏は、みんなで楽しくおうちをスッキリ！</h2>
+            <p>一人じゃ続かない片付けも、仲間と一緒ならもっと楽しい！<br>紅組・白組、どちらのチームで勝利を目指す？</p>
+            <div class="team-choice">
+                <div id="choice-red" class="team-card red">🔴 紅組で参加！</div>
+                <div id="choice-white" class="team-card white">⚪️ 白組で参加！</div>
             </div>
+            <div class="event-period">
+                <strong>開催期間: 2025年7月1日(火) 〜 7月30日(水)</strong>
+            </div>
+        </section>
+
+        <section id="countdown-section" class="fade-in">
             <div class="countdown">
-                <h3>開催まであと…</h3>
+                <h3>開会式まで、あと…</h3>
                 <div id="timer">
                     <span class="days">00</span>日
                     <span class="hours">00</span>時間
@@ -34,76 +42,73 @@
             </div>
         </section>
 
-        <section id="about" class="container">
-            <h2>🎉 企画概要</h2>
-            <p>毎日いそがしいママたちが主役！「紅組」「白組」に分かれて、期間中に手放した物の数でポイントを競うチーム戦です。一人じゃ続かないお片付けも、仲間と一緒ならきっと乗り越えられる！途中参加も大歓迎です！</p>
-        </section>
-
-        <section id="rules" class="container rule-container">
-            <h2>📣 ルール詳細</h2>
+        <section id="rules" class="container fade-in">
+            <h2>基本ルール</h2>
             <div class="rule-cards">
-                <div class="card red-team">
-                    <h3>🔴 基本ポイント</h3>
-                    <p><strong>物を1つ手放すごとに【1点】</strong><br>捨てる、売る、譲る、なんでもOK！子どものサイズアウト服、使わないおもちゃ、読まなくなった本など、写真付きで報告しよう！</p>
+                <div class="card">
+                    <h3><span class="icon">🏆</span> 基本ポイント</h3>
+                    <p><strong>物を1つ手放すごとに【1点】</strong><br>捨てる、売る、譲る、なんでもOK！写真付きで報告してチームに貢献しよう！</p>
                 </div>
-                <div class="card white-team">
-                    <h3>⚪ 応援ポイント</h3>
-                    <p><strong>仲間への応援で【1点】</strong><br>チームメイトの投稿に「いいね！」や「おつかれさま！」などのコメントでポイントGET！励まし合いがチームの力になる！</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="bonus" class="container">
-            <h2>🏆 特別ボーナスポイント</h2>
-            <p class="section-lead">ちょっと面倒な「ひと手間」を乗り越えたらボーナスGET！</p>
-            <div class="bonus-cards">
-                <div class="card bonus-card">
-                    <h3><span class="bonus-icon">💰</span>メルカリ出品ボーナス【+10点】</h3>
-                    <p>フリマアプリに「出品」するだけでOK！売れなくても大丈夫。出品画面のスクショで報告しよう！</p>
-                </div>
-                <div class="card bonus-card">
-                    <h3><span class="bonus-icon">🛋️</span>粗大ごみ予約ボーナス【+10点】</h3>
-                    <p>ずっと気になっていた大物を手放すチャンス！粗大ごみの「予約」が完了したら、予約画面のスクショで報告！</p>
+                <div class="card">
+                    <h3><span class="icon">💖</span> 応援ポイント</h3>
+                    <p><strong>仲間への応援で【1点】</strong><br>「いいね！」や「おつかれさま！」のコメントで仲間を応援！チームの士気を高めよう！</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="secret" class="container">
-            <h2>🤫 大逆転チャンス！隠し玉ポイント</h2>
-            <p>忙しくて報告できなかった分も無駄にならない！期間中に手放したけど報告しなかったポイントを「隠し玉」として最終日にチームへ投入できます。最後までドキドキの展開が待っている！</p>
         </section>
 
-        <section id="flow" class="container">
-            <h2>👟 参加の流れ</h2>
+        <section id="special-events" class="container fade-in">
+            <h2>特別競技でボーナスGET！</h2>
+            
+            <div class="special-card tug-of-war">
+                <div class="special-card-content">
+                    <h3><span class="icon">💪</span> 大物片付け 綱引き</h3>
+                    <p>粗大ごみや大型家具など、手放すのが大変な「大物」を片付けると、自チームの綱を引くことができる！期間終了後、より多くの大物を手放したチームに【勝利ボーナス 100点】が加算されるぞ！</p>
+                </div>
+                <div class="tug-of-war-visual">
+                    <div class="rope"></div>
+                </div>
+            </div>
+
+            <div class="special-card flea-market">
+                 <div class="special-card-content">
+                    <h3><span class="icon">💰</span> フリマアプリ 売り物競争</h3>
+                    <p>フリマアプリに出品＆売却で大量ポイント！<br>
+                    ・<strong>出品したら…【+10点】</strong><br>
+                    ・<strong>売れたらさらに！…【+20点】</strong><br>
+                    目指せNo.1出品マスター！</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="secret" class="container fade-in">
+            <h2>🤫 大逆転！隠し玉ポイント</h2>
+            <p>忙しくて報告できなかった分も大丈夫！こっそり貯めたポイントを最終日にドカンと投入！最後まで勝敗がわからないドキドキの展開を楽しもう！</p>
+        </section>
+
+        <section id="flow" class="container fade-in">
+            <h2>参加の流れ</h2>
             <ol class="flow-steps">
-                <li><strong>選手宣誓！</strong><br>参加したい組（紅組 or 白組）を選んでコミュニティで宣言！</li>
-                <li><strong>競技開始！</strong><br>スキマ時間でOK！自分のペースでお片付けを進めよう。</li>
-                <li><strong>結果報告＆応援！</strong><br>物を手放したら写真付きで投稿！仲間を応援しよう！</li>
+                <li><strong>選手登録！</strong><br>まずは下のボタンからGoogle Formにアクセスし、参加チームなどを申請しよう！</li>
+                <li><strong>競技開始！</strong><br>自分のペースでお片付け！スキマ時間で1つ手放すだけでもOK！</li>
+                <li><strong>結果報告＆応援！</strong><br>物を手放したら指定の場所で報告！仲間を応援して盛り上げよう！</li>
             </ol>
-            <h4>【投稿フォーマット例】</h4>
-            <div class="code-block">
-                <p>【チーム名】白組<br>
-                【手放したもの】サイズアウトした子ども靴 3足<br>
-                【獲得ポイント】3点<br>
-                【コメント】あっという間に大きくなるなぁ…。思い出をありがとう！<br>
-                #ママのお片付け運動会 #白組</p>
-            </div>
         </section>
 
-        <section id="cta" class="cta-section">
-            <h2>さあ、あなたも選手になろう！</h2>
-            <p>どちらのチームで参加する？<br>下のボタンからコミュニティに参加して、選手宣誓しよう！</p>
-            <a href="【ここに参加用URL】" class="cta-button" target="_blank" rel="noopener noreferrer">
-                コミュニティに参加して<br>お片付け運動会を始める！
+        <section id="cta" class="cta-section fade-in">
+            <h2>さあ、選手登録をして<br>最高の夏を始めよう！</h2>
+            <p>準備はいい？今すぐエントリー！</p>
+            <a href="【あなたのGoogle FormのURL】" class="cta-button" target="_blank" rel="noopener noreferrer">
+                Google Formで選手登録する！
             </a>
         </section>
-
     </main>
 
     <footer>
-        <p>© 2025 Your Community Name. All Rights Reserved.</p>
+        <p class="fade-in">© 2025 Your Community Name. All Rights Reserved.</p>
     </footer>
 
+    <!-- 紙吹雪ライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
