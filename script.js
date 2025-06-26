@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     fadeInElements.forEach(el => observer.observe(el));
 
-    // カウントダウンタイマー
+    // カウントダウンタイマー（閉会式までの時間に変更）
     const countdown = () => {
-        const eventDate = new Date('2025-07-01T00:00:00+09:00').getTime();
+        const eventEndDate = new Date('2025-07-30T23:59:59+09:00').getTime();
         const now = new Date().getTime();
-        const distance = eventDate - now;
+        const distance = eventEndDate - now;
 
         const timerElement = document.getElementById('timer');
         const countdownContainer = document.querySelector('.countdown');
@@ -36,15 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="minutes">${format(minutes)}</span>分
                 <span class="seconds">${format(seconds)}</span>秒`;
         } else {
-            const endDate = new Date('2025-07-30T23:59:59+09:00').getTime();
-            if (now > endDate) {
-                countdownContainer.innerHTML = '<h3>イベントは終了しました！<br>ご参加ありがとうございました！</h3>';
-            } else {
-                countdownContainer.innerHTML = '<h3>🎉イベント開催中！🎉<br>みんなで盛り上がろう！</h3>';
-            }
+            countdownContainer.innerHTML = '<h3>イベントは終了しました！<br>ご参加ありがとうございました！</h3>';
             clearInterval(timerInterval);
         }
     };
+    // 初回実行とタイマー設定
+    const startDate = new Date('2025-07-01T00:00:00+09:00').getTime();
+    if (new Date().getTime() < startDate) {
+        document.querySelector('.countdown h3').textContent = '開会式まで、あと…';
+        // 開会式までのタイマーを別途設定しても良いが、ここではシンプルに閉会式までの時間を表示
+    }
     const timerInterval = setInterval(countdown, 1000);
     countdown();
 
