@@ -14,40 +14,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     fadeInElements.forEach(el => observer.observe(el));
 
-    // カウントダウンタイマー（閉会式までの時間に変更）
+    // カウントダウンタイマー
+    // イベントの開始・終了日時を定義
+    const eventStartDate = new Date('2025-07-01T00:00:00+09:00').getTime();
+    const eventEndDate = new Date('2025-07-30T23:59:59+09:00').getTime();
+
+    const countdownContainer = document.querySelector('#countdown-section .countdown');
+    const countdownTitle = countdownContainer.querySelector('h3');
+    const timerElement = document.getElementById('timer');
+
+    let timerInterval; // タイマーを後で停止できるように変数を宣言
+
     const countdown = () => {
-        const eventEndDate = new Date('2025-07-30T23:59:59+09:00').getTime();
         const now = new Date().getTime();
-        const distance = eventEndDate - now;
+        let targetDate;
+        let titleText = '';
 
-        const timerElement = document.getElementById('timer');
-        const countdownContainer = document.querySelector('.countdown');
-
-        if (distance > 0) {
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            const format = (num) => num.toString().padStart(2, '0');
-            timerElement.innerHTML = `
-                <span class="days">${format(days)}</span>日
-                <span class="hours">${format(hours)}</span>時間
-                <span class="minutes">${format(minutes)}</span>分
-                <span class="seconds">${format(seconds)}</span>秒`;
+        // 状況に応じて目標日時とタイトルを決定
+        if (now < eventStartDate) {
+            // 1. イベント開始前
+            targetDate = eventStartDate;
+            titleText = '開会式まで、あと…';
+        } else if (now < eventEndDate) {
+            // 2. イベント期間中
+            targetDate = eventEndDate;
+            titleText = '閉会式まで、あと…';
         } else {
+            // 3. イベント終了後
             countdownContainer.innerHTML = '<h3>イベントは終了しました！<br>ご参加ありがとうございました！</h3>';
-            clearInterval(timerInterval);
+            clearInterval(timerInterval); // タイマーを停止
+            return; // これ以上処理しない
         }
+
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        const format = (num) => num.toString().padStart(2, '0');
+
+        // HTMLに反映
+        countdownTitle.textContent = titleText;
+        timerElement.innerHTML = `
+            <span class="days">${format(days)}</span>日
+            <span class="hours">${format(hours)}</span>時間
+            <span class="minutes">${format(minutes)}</span>分
+            <span class="seconds">${format(seconds)}</span>秒`;
     };
-    // 初回実行とタイマー設定
-    const startDate = new Date('2025-07-01T00:00:00+09:00').getTime();
-    if (new Date().getTime() < startDate) {
-        document.querySelector('.countdown h3').textContent = '開会式まで、あと…';
-        // 開会式までのタイマーを別途設定しても良いが、ここではシンプルに閉会式までの時間を表示
-    }
-    const timerInterval = setInterval(countdown, 1000);
+
+    // 1秒ごとにcountdown関数を実行
+    timerInterval = setInterval(countdown, 1000);
+    // ページ読み込み時に即時実行して、ちらつきを防ぐ
     countdown();
+
 
     // 紙吹雪機能
     const choiceRed = document.getElementById('choice-red');
